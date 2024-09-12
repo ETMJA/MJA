@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/24763fbc07.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/iniciosesion.css" />
+    <link rel="stylesheet" href="../css/main-login.css">
+    <link rel="icon" href="../image/LOGO gris.png">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <div class="forms-container">
+            <div class="signin-signup">
+                <form action="../html/iniciado.html" method="post" class="sign-in-form">
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" name="nickname" placeholder="Usuario" />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" name="password" placeholder="Contraseña" />
+                    </div>
+                    <li><a class="btn solido" href="../html/iniciado.html">Inicio sesión</a></li>
+                </form>
+
+                <form action="#" class="sign-up-form">
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Usuario" />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" placeholder="Email" />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Contraseña" />
+                    </div>
+                    <input type="submit" class="btn" value="Registrarse" />
+                </form>
+            </div>
+        </div>
+
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>Regístrate y únete para descubrir nuevas funciones.</h3>
+                    <p>¡Estamos emocionados de que te unas con nosotros!🚀</p>
+                    <button class="btn transparent" id="sign-up-btn">Crear Cuenta</button>
+                </div>
+                <img src="../svg/undraw_sign_up_n6im.svg" class="image" alt="" />
+            </div>
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>¡Bienvenido otra vez!</h3>
+                    <p>Ingrese sus datos para utilizar todas las funciones del sitio</p>
+                    <button class="btn transparent" id="sign-in-btn">Iniciar Sesión</button>
+                </div>
+                <img src="../svg/undraw_metrics_re_6g90.svg" class="image" alt="" />
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/inicio.js"></script>
+</body>
+</html>
