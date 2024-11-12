@@ -101,9 +101,10 @@ const humChart = new Chart(ctxHum, {
 // Conexión al broker MQTT
 client.on("connect", () => {
   console.log("Conectado al broker MQTT");
-  client.subscribe("/MJA/DHT11", (err) => {
+  // Suscripción a ambos topics
+  client.subscribe(["/MJA/TEMP", "/MJA/HUM"], (err) => {
     if (!err) {
-      console.log("Suscripción exitosa a /MJA/DHT11");
+      console.log("Suscripción exitosa a /MJA/TEMP y /MJA/HUM");
     } else {
       console.error("Error al suscribirse:", err);
     }
@@ -114,18 +115,16 @@ client.on("connect", () => {
 client.on("message", (topic, message) => {
   console.log("Mensaje recibido en topic " + topic + ": " + message.toString());
 
-  if (topic === "/MJA/DHT11") {
-    const [temp, hum] = message.toString().split(",");
-    if (temp && hum) {
+  if (topic === "/MJA/TEMP") {
+    const temp = message.toString();
+    if (temp) {
       document.getElementById("temp").innerText = temp + " °C";
-      document.getElementById("hum").innerText = hum + " %";
 
-      // Añadir los nuevos datos al gráfico
+      // Añadir los nuevos datos al gráfico de temperatura
       const currentTime = Date.now(); // Hora actual en milisegundos
       const newTime = timeLabels.length ? timeLabels[timeLabels.length - 1] + 1 : 0; // Incrementar el tiempo
       timeLabels.push(newTime);
       tempData.push(parseFloat(temp));
-      humData.push(parseFloat(hum));
 
       // Verificar si han pasado 24 horas desde el primer dato
       const firstTimestamp = timeLabels[0] * 1000; // Convertir tiempo en segundos a milisegundos
@@ -133,20 +132,44 @@ client.on("message", (topic, message) => {
       if (currentTime - firstTimestamp > twentyFourHours) {
         // Eliminar los datos más antiguos
         tempData.shift();
-        humData.shift();
         timeLabels.shift();
       }
 
-      // Actualizar ambos gráficos
+      // Actualizar el gráfico de temperatura
       tempChart.update();
-      humChart.update();
 
-      // Guardar los datos en localStorage
+      // Guardar los datos de temperatura en localStorage
       localStorage.setItem('tempData', JSON.stringify(tempData));
-      localStorage.setItem('humData', JSON.stringify(humData));
       localStorage.setItem('timeLabels', JSON.stringify(timeLabels));
     } else {
-      console.warn("Formato inesperado de datos:", message.toString());
+      console.warn("Formato inesperado de datos de temperatura:", message.toString());
+    }
+  }
+
+  if (topic === "/MJA/HUM") {
+    const hum = message.toString();
+    if (hum) {
+      document.getElementById("hum").innerText = hum + " %";
+
+      // Añadir los nuevos datos al gráfico de humedad
+      humData.push(parseFloat(hum));
+
+      // Verificar si han pasado 24 horas desde el primer dato
+      const currentTime = Date.now(); // Hora actual en milisegundos
+      const firstTimestamp = timeLabels[0] * 1000; // Convertir tiempo en segundos a milisegundos
+      const twentyFourHours = 24 * 60 * 60 * 1000; // 24 horas en milisegundos
+      if (currentTime - firstTimestamp > twentyFourHours) {
+        // Eliminar los datos más antiguos
+        humData.shift();
+      }
+
+      // Actualizar el gráfico de humedad
+      humChart.update();
+
+      // Guardar los datos de humedad en localStorage
+      localStorage.setItem('humData', JSON.stringify(humData));
+    } else {
+      console.warn("Formato inesperado de datos de humedad:", message.toString());
     }
   }
 });
