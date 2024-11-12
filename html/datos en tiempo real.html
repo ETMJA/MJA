@@ -3,17 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LCD Display</title>
-  <link rel="stylesheet" href="../css/tiempo-real.css"> 
+  <title>Datos en tiempo real</title>
+  <link rel="stylesheet" href="../css/tiempo-real.css">
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
 </head>
 <body>
-  <div class="lcd-container">
+  <div class="lcd-container" id="data">
     <div class="lcd">
-      <p>Temperatura: <span id="temp">-- °C</span></p>
-      <p>Humedad: <span id="hum">-- %</span></p>
-      <p class="time" id="time">--:--:--</p>
+    <p>Temp: <span span id="temp">--</span></p>
+    <p>Hume: <span id="hum">--</span></p>
     </div>
   </div>
+
   <script src="../js/tiempo-real.js"></script>
 </body>
 </html>
