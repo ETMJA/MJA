@@ -37,8 +37,6 @@ body {
   .chart h2 {
     text-align: center;
   }
-
-
   /* Media query para pantallas pequeñas (móviles) */
   @media (max-width: 768px) {
     body {

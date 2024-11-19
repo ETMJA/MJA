@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Grafica</title>
+        <link rel="stylesheet" href="../css/grafica.css">
+        <link rel="stylesheet" href="../css/main.css">
+        <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        
+      </head>
+      <body>
+        <div id="data">
+          <p>Temperatura: <span span id="temp">--</span></p>
+          <p>Humedad: <span id="hum">--</span></p>
+        </div>
+         <!-- Contenedor de los gráficos -->
+  <div class="charts-container">
+    <div class="chart">
+      <h2>Gráfico de Temperatura</h2>
+      <canvas id="tempChart" width="400" height="200"></canvas>
+    </div>
+    <div class="chart">
+        <h2>Gráfico de Humedad</h2>
+        <canvas id="humChart" width="400" height="200"></canvas>
+      </div>
+    </div>
+    <script src="../js/grafica.js"></script>
+  </body>
+  </html>
