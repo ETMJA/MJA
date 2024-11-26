@@ -35,25 +35,35 @@
 
 
  .Registros-boton {
-    max-width: 50%;
-    box-shadow: 10px 10px 10px #4D4D4D;
-    display: block; /* Hacer que el botón se vea abajo de la imagen */
-    margin: 50px auto;
-    padding: 10px 20px; 
-    background-color:#5A6E6A; /*color de fondo*/
-    color:white;
-    border: none;
-    border-radius: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    text-decoration: none;
     font-family: 'Poppins', sans-serif;
+    max-width: 50%;
+    margin: 50px auto;
+    display: block; /* Hace que el enlace se vea como un bloque en línea */
+    background-color: var(--boton-descarga);
+    color: var(--color-texto); /* Color de texto */
+    padding: 15px 30px; /* Espaciado interior */
+    text-align: center; /* Centra el texto dentro del botón */
+    border: none; /* Elimina cualquier borde por defecto */
+    border-radius: 10px; /* Bordes redondeados */
+    font-size: 1.2rem; /* Tamaño del texto */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    cursor: pointer; /* Cambia el cursor a una mano cuando se pasa sobre el botón */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transición suave al hacer hover */
+    margin-top: 20px; /* Espaciado superior entre el párrafo y el botón */
     font-weight: bold;
-} 
+}
 
+/* Efecto al pasar el cursor sobre el botón */
 .Registros-boton:hover {
-    background-color: var(--color-nav);
-} 
+    background-color:var(--color-hover); /* Cambio de color al pasar el cursor */
+    transform: scale(1.05); /* Efecto de aumento al hacer hover */
+}
+
+/* Efecto al hacer clic en el botón */
+.Registros-boton:active {
+    background-color: var(--color-primario); /* Cambio de color al hacer clic */
+    transform: scale(0.98); /* Efecto de reducir el tamaño al hacer clic */
+}
 
 /* cambia el titulo "copnfiguración de rango de temperatura */
 .configuracion-temperatura h2{
@@ -126,23 +136,21 @@
         margin: 0 auto;
     }
     .Registros-boton {
-        max-width: 50%;
-        box-shadow: 10px 10px 10px #4D4D4D;
-        display: block; /* Hacer que el botón se vea abajo de la imagen */
-        margin: 50px auto;
-        padding: 10px 20px; 
-        background-color:#5A6E6A; /*color de fondo*/
-        color:white;
-        border: none;
-        border-radius: 10px;
-        font-size: 16px;
-        cursor: pointer;
-        text-decoration: none;
         font-family: 'Poppins', sans-serif;
+        max-width: 50%;
+        margin: 50px auto;
+        display: block; /* Hace que el enlace se vea como un bloque en línea */
+        background-color: var(--boton-descarga);
+        color: var(--color-texto); /* Color de texto */
+        padding: 15px 30px; /* Espaciado interior */
+        text-align: center; /* Centra el texto dentro del botón */
+        border: none; /* Elimina cualquier borde por defecto */
+        border-radius: 10px; /* Bordes redondeados */
+        font-size: 1.2rem; /* Tamaño del texto */
+        text-decoration: none; /* Elimina el subrayado del enlace */
+        cursor: pointer; /* Cambia el cursor a una mano cuando se pasa sobre el botón */
+        transition: background-color 0.3s ease, transform 0.2s ease; /* Transición suave al hacer hover */
+        margin-top: 20px; /* Espaciado superior entre el párrafo y el botón */
         font-weight: bold;
-    } 
-    
-    .Registros-boton:hover {
-        background-color: var(--color-nav);
-    } 
+    }    
 }

@@ -1,0 +1,61 @@
+/* Estilos para el encabezado */
+.manual-container h2 {
+    font-size: 70px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Estilos para el párrafo */
+.manual-container p {
+    font-size: 20px;
+    text-align: center;
+}
+
+/* Botón estilo "manual" */
+#manual .button {
+    font-family: 'Poppins', sans-serif;
+    max-width: 50%;
+    margin: 50px auto;
+    display: block; /* Hace que el enlace se vea como un bloque en línea */
+    background-color: var(--boton-descarga);
+    color: var(--color-texto); /* Color de texto */
+    padding: 15px 30px; /* Espaciado interior */
+    text-align: center; /* Centra el texto dentro del botón */
+    border: none; /* Elimina cualquier borde por defecto */
+    border-radius: 10px; /* Bordes redondeados */
+    font-size: 1.2rem; /* Tamaño del texto */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    cursor: pointer; /* Cambia el cursor a una mano cuando se pasa sobre el botón */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transición suave al hacer hover */
+    margin-top: 20px; /* Espaciado superior entre el párrafo y el botón */
+    font-weight: bold;
+}
+
+
+/* Efecto al pasar el cursor sobre el botón */
+#manual .button:hover {
+    background-color: var(--color-hover); /* Cambio de color al pasar el cursor */
+    transform: scale(1.05); /* Efecto de aumento al hacer hover */
+}
+
+/* Efecto al hacer clic en el botón */
+#manual .button:active {
+    background-color: var(--color-primario); /* Cambio de color al hacer clic */
+    transform: scale(0.98); /* Efecto de reducir el tamaño al hacer clic */
+}
+
+/* Diseño para dispositivos móviles */
+@media (max-width: 768px) {
+    .manual-container h2 {
+        font-size: 50px; /* Ajuste del tamaño de h2 para pantallas más pequeñas */
+    }
+
+    .manual-container p {
+        font-size: 18px; /* Ajuste del tamaño de párrafo */
+    }
+
+    #manual .button {
+        padding: 12px 25px; /* Ajuste del tamaño del botón */
+        font-size: 1rem; /* Ajuste del tamaño de la fuente */
+    }
+}

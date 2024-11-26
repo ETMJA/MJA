@@ -6,9 +6,10 @@
     --color-texto: #C2BC61;
     --color-sombra-barra: 2px 5px 10px #7ca4a5 ;
     --color-backgraound-mobile: #67a7a7;
-    --color-hover:black;
+    --color-hover:#022222;
     --color-ware:#045454;
     --color-nav:#488B8B;
+    --boton-descarga:#066666;
 
     --transition: 0.2s ease-in-out;
     color-scheme: light;
@@ -22,6 +23,8 @@
     --color-backgraound-mobile-oscuro:#022222;
     --color-ware:#022222 ;
     --color-nav:#7A8C88;
+    --boton-descarga:#033737;
+    --color-hover:#011f1f;
     color-scheme: dark;
     }
 }
