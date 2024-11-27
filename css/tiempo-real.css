@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+/* Estilo general */
 body {
   font-family: Arial, sans-serif;
   display: flex;
@@ -10,13 +11,18 @@ body {
   background-color: #4A8A26;
 }
 
+/* Contenedor del LCD */
 .lcd-container {
   transform: scale(3);
   background-color: #7F7F7F;
   padding: 20px;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+/* Diseño del LCD */
 .lcd {
   width: 320px;
   height: 140px;
@@ -27,31 +33,47 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   color: #d3f0df;
   font-family: 'Press Start 2P', sans-serif;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto auto;
-  gap: -50px;
-  justify-items: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  text-align: left;
+  text-align: center;
 }
 
+/* Estilo del texto */
 .lcd p {
   font-size: 1em;
-  margin: 25px;
+  margin: 10px 0;
 }
 
 .lcd span {
   font-weight: bold;
 }
 
-.lcd .time {
-  font-size: 1em;
-  font-weight: bold;
+/* Botón de retorno (ahora es un enlace) */
+.back-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  font-family: 'Press Start 2P', sans-serif;
+  font-size: 12px;
+  text-decoration: none; /* Quitar subrayado del enlace */
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+  align-self: center; /* Centrado horizontal en el contenedor */
+  text-align: center;
 }
 
-@media (max-width:970px){
-  .lcd-container{
+.back-button:hover {
+  background-color: #45a049;
+}
+
+/* Escalado para dispositivos pequeños */
+@media (max-width: 970px) {
+  .lcd-container {
     transform: scale(0.9);
   }
 }
