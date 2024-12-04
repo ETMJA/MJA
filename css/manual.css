@@ -3,6 +3,7 @@
     font-size: 70px;
     text-align: center;
     font-weight: bold;
+<<<<<<< HEAD
     margin-top: -150px;
 }
 
@@ -17,6 +18,10 @@
 }
 
 
+=======
+}
+
+>>>>>>> 308b8079739b2628189dfc6100cc57cd70ea92fb
 /* Estilos para el párrafo */
 .manual-container p {
     font-size: 20px;
